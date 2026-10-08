@@ -1,0 +1,6 @@
+{
+  "name": "ScholarFolio — Student Academic & Research Portfolio",
+  "description": "A production-grade academic portfolio, research profile, and project archive designed for university students, postgraduate scholars, and researchers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
