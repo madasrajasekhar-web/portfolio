@@ -26,7 +26,7 @@ import {
   CustomizerDrawer,
 } from './components/ModalsAndTools';
 
-const PROFILE_STORAGE_KEY = 'scholarfolio_madasu_rajasekhar_v2';
+const PROFILE_STORAGE_KEY = 'scholarfolio_madasu_rajasekhar_v3';
 
 const SECTION_IDS = [
   'home',
@@ -58,7 +58,7 @@ export default function App() {
         return {
           ...defaultStudentProfile,
           ...parsed,
-          profileImage: parsed.profileImage || defaultStudentProfile.profileImage,
+          profileImage: defaultStudentProfile.profileImage,
         };
       }
     } catch {

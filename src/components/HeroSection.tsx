@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   ArrowDownRight,
   FileText,
   Mail,
-  Camera,
   UserCheck,
   PencilLine,
 } from 'lucide-react';
@@ -25,23 +24,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   isEditMode,
 }) => {
   const [imageError, setImageError] = useState(false);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = () => {
-      if (typeof reader.result === 'string') {
-        setImageError(false);
-        onUpdateProfile((prev) => ({
-          ...prev,
-          profileImage: reader.result as string,
-        }));
-      }
-    };
-    reader.readAsDataURL(file);
-  };
 
   const scrollToId = (id: string) => {
     const el = document.getElementById(id);
@@ -248,14 +230,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="lg:col-span-4">
             <div className="bg-white p-4 border border-[#DCD6C8] rounded shadow-[0_2px_10px_rgba(20,20,19,0.03)] space-y-4">
               <figure className="relative">
-                <div className="aspect-[3/4] w-full relative overflow-hidden bg-[#F3EFE6] border border-[#E6E1D6]">
+                <div className="aspect-[3/4] w-full relative overflow-hidden bg-[#FDF4DC] border border-[#E6E1D6] rounded-xs">
                   {!imageError && profile.profileImage ? (
                     <img
                       src={profile.profileImage}
                       alt={profile.profileImageAlt}
                       referrerPolicy="no-referrer"
                       onError={() => setImageError(true)}
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-top"
                     />
                   ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center bg-[#F3EFE6]">
@@ -268,24 +250,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                       </p>
                     </div>
                   )}
-
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    onChange={handleImageUpload}
-                    className="hidden"
-                    aria-label="Upload custom profile portrait"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => fileInputRef.current?.click()}
-                    className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-white/95 hover:bg-white text-[#141413] border border-[#DCD6C8] text-xs font-medium shadow-xs transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[#183153]"
-                    title="Upload your photograph"
-                  >
-                    <Camera className="w-3.5 h-3.5 text-[#183153]" />
-                    <span>Replace Photo</span>
-                  </button>
                 </div>
 
                 <figcaption className="pt-3 flex items-center justify-between text-xs text-[#57544E] font-serif italic">

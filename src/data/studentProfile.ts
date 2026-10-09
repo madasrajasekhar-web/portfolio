@@ -1,4 +1,4 @@
-import scholarPortraitImg from '../assets/images/avatar_student_scholar_1791452239982.jpg';
+import scholarPortraitImg from '../assets/images/madasu_rajasekhar_photo.jpg';
 import projectResearchImg from '../assets/images/project_research_system_1791452260920.jpg';
 import projectComputationalImg from '../assets/images/project_computational_model_1791452274760.jpg';
 import projectWebArchiveImg from '../assets/images/project_web_archive_1791452291572.jpg';
@@ -226,7 +226,7 @@ export const defaultStudentProfile: StudentProfile = {
   heroIntroduction:
     'I am an Assistant Professor in the Department of Commerce at DNR College, Bhimavaram, with 3 years of teaching experience, and a Doctoral Researcher at Sri Venkateswara University, Andhra Pradesh. Having qualified APSET (2024) for Assistant Professor in Commerce, my research and teaching focus on online buying behavior, Unified Payment Interface (UPI) adoption, digital marketing, sustainable entrepreneurship, and financial analysis.',
   profileImage: scholarPortraitImg,
-  profileImageAlt: 'Academic portrait placeholder for Madasu Rajasekhar, Assistant Professor of Commerce',
+  profileImageAlt: 'Portrait of Madasu Rajasekhar, Assistant Professor of Commerce',
   university: 'Sri Venkateswara University & DNR College, Bhimavaram',
   currentInstitution: 'DNR College, Bhimavaram',
   degree: 'Ph.D. in Commerce (Submitted) · M.Com · APSET Qualified',
